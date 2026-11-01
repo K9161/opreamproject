@@ -25,6 +25,7 @@ import { I18nProvider } from "./i18n";
 
 export default function App() {
   const [userData, setUserData] = useState(null);
+  
   const [authLoading, setAuthLoading] = useState(true);
 
   async function saveUserData() {
