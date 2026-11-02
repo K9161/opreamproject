@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import StudentSidebar from "./Sidebar";
 import { Bell, ChevronRight } from "lucide-react";
+
 import { useI18n } from "../i18n";
 
 export default function Layout({ userData, logOut }) {
