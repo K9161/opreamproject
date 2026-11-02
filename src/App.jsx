@@ -10,9 +10,10 @@ import {
 
 import Layout from "./Component/Layout";
 import Login from "./pages/Login";
-import Forgotpassword from "./pages/Forgotpassword";
+import ForgotPassword from "./pages/ForgotPassword";
 import ProtectedRoute from "./Component/ProtectedRoute";
 import Profile from "./Component/profile";
+import Exams from "./pages/Exams";
 import Internship from "./pages/internship";
 import InternshipDetails from "./pages/InternshipDetails";
 import ApplyInternship from "./pages/ApplyInternship";
@@ -25,9 +26,6 @@ import { I18nProvider } from "./i18n";
 
 export default function App() {
   const [userData, setUserData] = useState(null);
-
-  
-
   const [authLoading, setAuthLoading] = useState(true);
 
   async function saveUserData() {
@@ -84,7 +82,7 @@ export default function App() {
     },
     {
       path: "/forgot-password",
-      element: <Forgotpassword />,
+      element: <ForgotPassword />,
     },
     {
       path: "/",
@@ -123,6 +121,14 @@ export default function App() {
           element: (
             <ProtectedRoute userData={userData} loading={authLoading}>
               <Profile userData={userData} />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "exams",
+          element: (
+            <ProtectedRoute userData={userData} loading={authLoading}>
+              <Exams />
             </ProtectedRoute>
           ),
         },
